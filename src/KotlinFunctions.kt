@@ -36,11 +36,22 @@ fun isPalindrome(words: String) {
     }
 }
 
-fun sayhello(){
+fun sayhello(names: Array<String>){
 
+    val helloNames = names.map { "Hello $it" }
+    helloNames.forEach{println(it)}
+    println("--------------------------")
 }
-fun performOperation(){
+fun performOperation(operation: (Int, Int) -> Int){
+    val result = operation(30,2)
+    println("El resultado de la operación es: $result")
+    println("--------------------------")
+}
 
+fun personToStudent(peopleList: List<personInfo.Person>): List<personInfo.Student> {
+    return peopleList.map { person ->
+        personInfo.Student(person.name, person.age, person.gender)
+    }
 }
 
 fun main() {
@@ -51,4 +62,23 @@ fun main() {
 
     val words = "radar"
     isPalindrome(words)
+
+    val names = arrayOf("Xavier", "Daniel", "Gabriel", "Sara")
+    sayhello(names)
+
+    performOperation{a,b -> a/b}
+
+    val peopleList = listOf(
+            personInfo.Person("Mario", 20, "M"),
+            personInfo.Person("Anabella", 22, "F"),
+            personInfo.Person("Juan Pedro", 19, "M")
+    )
+
+    val studentsList = personToStudent(peopleList)
+
+    studentsList.forEach {
+        println("El estudiante ${it.name} tiene ${it.age} años y su género es ${it.gender}")
+
+    }
+    println("--------------------------")
 }

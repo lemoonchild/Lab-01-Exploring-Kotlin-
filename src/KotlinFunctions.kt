@@ -28,10 +28,10 @@ fun isPalindrome(words: String) {
     val areEqual = chainArray.contentEquals(chainReversed)
 
     if (areEqual) {
-        println("La palabra ingresada es palíndromo")
+        println("La palabra ingresada es palíndromo.")
         println("--------------------------")
     } else {
-        println("La palabra ingresada no es palíndromo")
+        println("La palabra ingresada no es palíndromo.")
         println("--------------------------")
     }
 }

@@ -1,2 +1,2 @@
-# Lab-01-Exploring-Kotlin
+# Lab-02-Kotlin-Functions
 Madeline Nahomy Castro Morales 22473
